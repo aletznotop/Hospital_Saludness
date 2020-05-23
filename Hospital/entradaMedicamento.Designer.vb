@@ -35,17 +35,19 @@ Partial Class entradaMedicamento
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Grid = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Clave = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UMedida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.Grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(38, 84)
+        Me.Label1.Location = New System.Drawing.Point(38, 124)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 13)
         Me.Label1.TabIndex = 0
@@ -72,7 +74,7 @@ Partial Class entradaMedicamento
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(38, 122)
+        Me.Label4.Location = New System.Drawing.Point(38, 162)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 3
@@ -81,7 +83,7 @@ Partial Class entradaMedicamento
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(38, 160)
+        Me.Label5.Location = New System.Drawing.Point(38, 200)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 13)
         Me.Label5.TabIndex = 4
@@ -90,10 +92,10 @@ Partial Class entradaMedicamento
         'claveMedica
         '
         Me.claveMedica.Enabled = False
-        Me.claveMedica.Location = New System.Drawing.Point(127, 84)
+        Me.claveMedica.Location = New System.Drawing.Point(127, 124)
         Me.claveMedica.Name = "claveMedica"
         Me.claveMedica.Size = New System.Drawing.Size(198, 20)
-        Me.claveMedica.TabIndex = 3
+        Me.claveMedica.TabIndex = 4
         '
         'usuario
         '
@@ -112,26 +114,26 @@ Partial Class entradaMedicamento
         '
         'cantidadMedica
         '
-        Me.cantidadMedica.Location = New System.Drawing.Point(127, 122)
+        Me.cantidadMedica.Location = New System.Drawing.Point(127, 162)
         Me.cantidadMedica.Name = "cantidadMedica"
         Me.cantidadMedica.Size = New System.Drawing.Size(198, 20)
-        Me.cantidadMedica.TabIndex = 4
+        Me.cantidadMedica.TabIndex = 5
         '
         'medida
         '
         Me.medida.Enabled = False
         Me.medida.FormattingEnabled = True
-        Me.medida.Location = New System.Drawing.Point(127, 157)
+        Me.medida.Location = New System.Drawing.Point(127, 197)
         Me.medida.Name = "medida"
         Me.medida.Size = New System.Drawing.Size(198, 21)
-        Me.medida.TabIndex = 5
+        Me.medida.TabIndex = 6
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(357, 277)
+        Me.Button1.Location = New System.Drawing.Point(347, 316)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(113, 39)
-        Me.Button1.TabIndex = 7
+        Me.Button1.TabIndex = 8
         Me.Button1.Text = "Registrar"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -150,21 +152,12 @@ Partial Class entradaMedicamento
         Me.Grid.AllowUserToDeleteRows = False
         Me.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Grid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Clave, Me.Cantidad, Me.UMedida})
-        Me.Grid.Location = New System.Drawing.Point(41, 200)
+        Me.Grid.Location = New System.Drawing.Point(41, 239)
         Me.Grid.Name = "Grid"
         Me.Grid.ReadOnly = True
         Me.Grid.Size = New System.Drawing.Size(284, 116)
         Me.Grid.TabIndex = 12
         Me.Grid.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(357, 140)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(113, 38)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Agrega"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Clave
         '
@@ -186,11 +179,39 @@ Partial Class entradaMedicamento
         Me.UMedida.ReadOnly = True
         Me.UMedida.Width = 80
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(347, 197)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(113, 38)
+        Me.Button2.TabIndex = 7
+        Me.Button2.Text = "Agrega"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(127, 86)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(198, 20)
+        Me.TextBox1.TabIndex = 3
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(38, 86)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(59, 13)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Id Entrada:"
+        '
         'entradaMedicamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(487, 326)
+        Me.ClientSize = New System.Drawing.Size(487, 362)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Grid)
         Me.Controls.Add(Me.Label6)
@@ -230,4 +251,6 @@ Partial Class entradaMedicamento
     Friend WithEvents Clave As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents UMedida As DataGridViewTextBoxColumn
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label7 As Label
 End Class
