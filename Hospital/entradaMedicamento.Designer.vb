@@ -39,7 +39,7 @@ Partial Class entradaMedicamento
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UMedida = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.idEntrada = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.Grid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -188,13 +188,13 @@ Partial Class entradaMedicamento
         Me.Button2.Text = "Agrega"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'idEntrada
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(127, 86)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(198, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.idEntrada.Enabled = False
+        Me.idEntrada.Location = New System.Drawing.Point(127, 86)
+        Me.idEntrada.Name = "idEntrada"
+        Me.idEntrada.Size = New System.Drawing.Size(198, 20)
+        Me.idEntrada.TabIndex = 3
         '
         'Label7
         '
@@ -211,7 +211,7 @@ Partial Class entradaMedicamento
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(487, 362)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.idEntrada)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Grid)
         Me.Controls.Add(Me.Label6)
@@ -251,6 +251,6 @@ Partial Class entradaMedicamento
     Friend WithEvents Clave As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents UMedida As DataGridViewTextBoxColumn
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents idEntrada As TextBox
     Friend WithEvents Label7 As Label
 End Class

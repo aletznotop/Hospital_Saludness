@@ -14,10 +14,10 @@ Public Class entradaMedicamento
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim sql, inserta1, inserta2, lastrecord As String
+        Dim sql, inserta1, inserta2 As String
         Dim rs As MySqlDataReader
         Dim com As MySqlCommand
-        Dim lastid, lastcant As Integer
+        Dim lastcant As Integer
 
         Try
             conexion = New MySqlConnection With {
@@ -29,26 +29,13 @@ Public Class entradaMedicamento
                     "database=hospital;"
                 }
             conexion.Open()
-            lastrecord = "select id_detalle from ent_med_detalle order by id_detalle desc limit 1;"
-            com = New MySqlCommand(lastrecord, conexion)
-            rs = com.ExecuteReader()
-            If rs.HasRows = True Then
-                rs.Read()
-                lastid = rs(0).ToString()
-                lastid += 1
-                conexion.Close()
-            Else
-                lastid = 1
-                conexion.Close()
-            End If
-
             If Grid.Rows.Count > 0 Then
                 For i As Integer = 0 To Grid.Rows.Count - 1
                     conexion.Open()
                     inserta1 = "insert into ent_med_detalle (entradamedicamento_idEntrada,medicamento_idMedicamento,id_entrada,id_medicamento,cantidad) values ('" _
-                            & lastid & "','" _
+                            & idEntrada.Text() & "','" _
                             & Grid.Rows.Item(i).Cells(0).Value & "','" _
-                            & lastid & "','" _
+                            & idEntrada.Text() & "','" _
                             & Grid.Rows.Item(i).Cells(0).Value & "','" _
                             & Grid.Rows.Item(i).Cells(1).Value & "');"
                     com = New MySqlCommand(inserta1, conexion)
@@ -154,5 +141,15 @@ Public Class entradaMedicamento
         claveMedica.Clear()
         medida.Text = ""
         medica.Clear()
+    End Sub
+
+    Private Sub idEntrada_KeyPress(sender As Object, e As KeyPressEventArgs) Handles idEntrada.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 End Class
