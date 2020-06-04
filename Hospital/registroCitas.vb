@@ -71,11 +71,41 @@ Public Class registroCitas
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim columna1, columna2 As String
         Dim row(1) As String
-        columna1 = MedicaCita.Text()
-        columna2 = CantiCita.Text()
-        row = {columna2, columna1}
-        medicamento.Rows.Add(row)
+        Dim sql As String
+        Dim rs As MySqlDataReader
+        Dim com As MySqlCommand
+        Dim dt = New DataTable()
+        Dim cantidad As Integer
 
+        Try
+            conexion = New MySqlConnection With {
+                .ConnectionString =
+                "server=localhost;" &
+                "user id=dbadmin;" &
+                "password=admin;" &
+                "port=3306;" &
+                "database=hospital;"
+            }
+            conexion.Open()
+            Dim medica As String = MedicaCita.Text.Substring(0, MedicaCita.Text.IndexOf("-"))
+            sql = "select existencia from medicamento where id_medicamento  = " & medica & ";"
+            com = New MySqlCommand(sql, conexion)
+            rs = com.ExecuteReader()
+            rs.Read()
+            cantidad = rs(0).ToString
+            cantidad -= Int16.Parse(CantiCita.Text())
+            If cantidad < 0 Then
+                MsgBox("No hay inventario para surtir")
+            Else
+                columna1 = MedicaCita.Text()
+                columna2 = CantiCita.Text()
+                row = {columna2, columna1}
+                medicamento.Rows.Add(row)
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
         'If medicamento.Rows.Count > 0 Then
         'For i As Integer = 0 To medicamento.Rows.Count - 1
         'MsgBox(medicamento.Rows.Item(i).Cells(0).Value + " " +
@@ -104,7 +134,7 @@ Public Class registroCitas
             }
             conexion.Open()
 
-            If ConsultaCita.Text() = "" Or PacienteCita.Text() = "" Or MedicaCita.Text() = "" Or CantiCita.Text() = "" Or medicamento.Rows.Count.ToString = "0" Then
+            If ConsultaCita.Text() = "" Or PacienteCita.Text() = "" Or MedicaCita.Text() = "" Or CantiCita.Text() = "" Or medicamento.Rows.Count.ToString = "0" Or ObsCita.Text() = "" Then
                 MsgBox("No puedes guardar sin datos")
             Else
                 sql = "insert into consultas (id_consulta,pacientes_noControl,usuario_idusuario,id_usuario,fecha,nocontrol,descripcion) values (" _

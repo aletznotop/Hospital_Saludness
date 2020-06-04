@@ -190,8 +190,8 @@ Partial Class entradaMedicamento
         '
         'idEntrada
         '
-        Me.idEntrada.Enabled = False
         Me.idEntrada.Location = New System.Drawing.Point(127, 86)
+        Me.idEntrada.MaxLength = 7
         Me.idEntrada.Name = "idEntrada"
         Me.idEntrada.Size = New System.Drawing.Size(198, 20)
         Me.idEntrada.TabIndex = 3

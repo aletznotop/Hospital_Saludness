@@ -48,21 +48,12 @@ Public Class registroPacientes
         End If
     End Sub
 
-    Private Sub noControl_Click(sender As Object, e As EventArgs) Handles noControl.Click
-        maternoPaciente.Clear()
-        paternoPaciente.Clear()
-        nombrePaciente.Clear()
-        noControl.Clear()
-        carrera.SelectedIndex = -1
-        genero.SelectedIndex = -1
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim sql, inserta As String
         Dim rs As MySqlDataReader
         Dim com As MySqlCommand
 
-        If nombrePaciente.Text() = "" Or paternoPaciente.Text() = "" Or maternoPaciente.Text() = "" Or genero.Text() = "" Or carrera.Text() = "" Then
+        If nombrePaciente.Text() = "" Or paternoPaciente.Text() = "" Or maternoPaciente.Text() = "" Or genero.Text() = "" Or carrera.Text() = "" Or noControl.Text() = "" Then
             MsgBox("Existen campos vacios, verifique")
         Else
             Try

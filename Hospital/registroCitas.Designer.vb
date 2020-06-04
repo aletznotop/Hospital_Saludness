@@ -82,6 +82,7 @@ Partial Class registroCitas
         'ConsultaCita
         '
         Me.ConsultaCita.Location = New System.Drawing.Point(118, 32)
+        Me.ConsultaCita.MaxLength = 7
         Me.ConsultaCita.Name = "ConsultaCita"
         Me.ConsultaCita.Size = New System.Drawing.Size(100, 20)
         Me.ConsultaCita.TabIndex = 4

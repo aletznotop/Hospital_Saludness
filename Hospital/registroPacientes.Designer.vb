@@ -53,6 +53,7 @@ Partial Class registroPacientes
         'noControl
         '
         Me.noControl.Location = New System.Drawing.Point(155, 81)
+        Me.noControl.MaxLength = 7
         Me.noControl.Name = "noControl"
         Me.noControl.Size = New System.Drawing.Size(100, 20)
         Me.noControl.TabIndex = 1

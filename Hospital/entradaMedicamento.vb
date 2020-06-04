@@ -31,6 +31,7 @@ Public Class entradaMedicamento
             conexion.Open()
             If Grid.Rows.Count > 0 Then
                 For i As Integer = 0 To Grid.Rows.Count - 1
+                    conexion.Close()
                     conexion.Open()
                     inserta1 = "insert into ent_med_detalle (entradamedicamento_idEntrada,medicamento_idMedicamento,id_entrada,id_medicamento,cantidad) values ('" _
                             & idEntrada.Text() & "','" _
@@ -77,7 +78,7 @@ Public Class entradaMedicamento
             medida.Text = ""
             medica.Clear()
             Grid.Rows.Clear()
-
+            idEntrada.Clear()
 
         Catch ex As Exception
             MsgBox(ex.ToString)
